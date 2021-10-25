@@ -8,23 +8,23 @@ namespace Autogermana.Domain.Entities
 {
     public class Product : Entity
     {
-        public string Codigo { get; set; }
+        public string Codigo { get; private set; }
 
-        public string Nombre { get; set; }
+        public string Nombre { get; private set; }
 
-        public float Precio { get; set; }
+        public float Precio { get; private set; }
 
-        public int Stock { get; set; }
+        public int Stock { get; private set; }
         
-        public string Descripcion { get; set; }
+        public string Descripcion { get; private set; }
         
-        public Byte Imagen { get; set; }
+        public Byte Imagen { get; private set; }
 
-        public StateProductEnum Estado { get; set; }
+        public StateProductEnum Estado { get; private set; }
 
-        public Category Category { get; set; }
+        public Category Category { get; private set; }
 
-        public string CategoryId { get; set; }
+        public string CategoryId { get; private set; }
 
         /// <summary>
         /// for ef

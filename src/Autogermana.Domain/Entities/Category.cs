@@ -8,13 +8,13 @@ namespace Autogermana.Domain.Entities
 {
     public class Category : Entity
     {
-        public string Nombre { get; set; }
+        public string Nombre { get; private set; }
 
-        public string Descripcion { get; set; }
+        public string Descripcion { get; private set; }
 
-        public StateCategoryEnum Estado { get; set; }
+        public StateCategoryEnum Estado { get; private set; }
 
-        public List<Product> Products { get; set; }
+        public List<Product> Products { get; private set; }
 
         /// <summary>
         /// for ef
