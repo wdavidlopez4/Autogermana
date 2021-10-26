@@ -45,7 +45,7 @@ namespace Autogermana.Domain.Ports
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public Task<List<T>> GetAll<T>(CancellationToken cancellationToken);
+        public Task<List<T>> GetAll<T>(CancellationToken cancellationToken) where T : Entity;
 
         /// <summary>
         /// retorna una lista segun la condicion
