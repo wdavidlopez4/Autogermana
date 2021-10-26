@@ -19,9 +19,9 @@ namespace Autogermana.Infrastructure.Mapping
         {
             this.CreateMap<List<Product>, List<ProductsByCategoryDTO>>();
             this.CreateMap<Product, ProductUpdateDataDTO>();
-            this.CreateMap <Product, ProductCreateDTO> ();
-            this.CreateMap <List<Category>, List<AllCategoriesDTO>> ();
-            this.CreateMap <Category, CategoryCreateDTO> ();
+            this.CreateMap <Product, ProductCreateDTO>();
+            this.CreateMap <Category, AllCategoriesDTO>();
+            this.CreateMap <Category, CategoryCreateDTO>();
         }
     }
 }

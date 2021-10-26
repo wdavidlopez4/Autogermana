@@ -1,0 +1,39 @@
+﻿@using Autogermana.Application.CategoryServices.QueryAllCategories
+@model List<AllCategoriesDTO>
+@{
+
+    ViewData["Title"] = "Categorias";
+    //var categorias = ViewData["dtos"] as List<AllCategoriesDTO>;
+}
+
+@if (Model.Count != 0)
+{
+    @foreach (var categoria in Model)
+    {
+        <div class="row no-gutters bg-light position-relative">
+            <div class="col-md-6 mb-md-0 p-md-4">
+                <img src="https://cdn01.vulcanpost.com/wp-uploads/2016/06/High-Res-Logo.png" class="w-100" alt="...">
+            </div>
+            <div class="col-md-6 position-static p-4 pl-md-0">
+                <h5 class="mt-0">@categoria.Nombre</h5>
+                <h6 class="card-subtitle mb-2 text-muted">@categoria.Estado</h6>
+                <p>@categoria.Descripcion</p>
+                <a class="btn btn-outline-dark" asp-area="" asp-controller="" asp-action="">Ver Productos</a>
+            </div>
+        </div>
+    }
+}
+else
+{
+    <div class="card">
+        <div class="card-header">
+            comenzamos
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Sin categorias</h5>
+            <p class="card-text">Aun no tienes categorias, debes crear una para comenzar</p>
+            <a class="btn btn-outline-dark" asp-area="" asp-controller="Category" asp-action="CrearCategoria">Crear</a>
+        </div>
+    </div>
+}
+

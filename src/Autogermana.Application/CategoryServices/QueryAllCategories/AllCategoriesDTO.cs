@@ -9,7 +9,7 @@ namespace Autogermana.Application.CategoryServices.QueryAllCategories
 {
     public class AllCategoriesDTO
     {
-        public string ID { get; set; }
+        public string Id { get; set; }
 
         public string Nombre { get; set; }
 

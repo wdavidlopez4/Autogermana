@@ -1,0 +1,56 @@
+﻿@using Autogermana.Application.CategoryServices.CommandCategoryCreate
+@model CategoryCreateCommand
+
+@{
+    ViewData["Title"] = "crearCategoria";
+}
+
+<div class="form-row">
+    <div class="col-md-12">
+        <form method="post" asp-controller="Category" asp-action="CrearCategoria" class="form-group">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <!--nombre-->
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label"></label>
+                <input asp-for="Nombre" type="" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Descripcion</label>
+                <textarea asp-for="Descripcion" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+
+            <!--estado-->
+            <select class="form-group" aria-label="ninguno" asp-for="Estado">
+                <option selected>seleccione un estado</option>
+                <option value=0>antigua</option>
+                <option value=1>en uso</option>
+                <option value=2>prueba</option>
+            </select>
+
+
+            <div class="container">
+                <div class="row">
+                    <!--enviar formulario-->
+                    <div class="col-sm">
+                        <input type="submit" value="Crear" class="btn btn-outline-dark" />
+                    </div>
+                    <!--regresar a la lista de mensajes-->
+                    <div class="col-sm">
+                        <a class="btn btn-outline-dark" asp-area="" asp-controller="Category" asp-action="Index">Categorias</a>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+
+@*script para hacer la validaciones en los campos*@
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
