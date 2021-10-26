@@ -15,9 +15,9 @@ namespace Autogermana.Domain.Factories
         }
 
         public Entity BuilderProduct(string codigo, string nombre, float precio, int stock, string descripcion, 
-            byte imagen, StateProductEnum estado, Category category, string categoryId, Guid? id = null)
+            byte imagen, StateProductEnum estado, string categoryId, Guid? id = null)
         {
-            return new Product(codigo, nombre, precio, stock, descripcion, imagen, estado, category, categoryId, id);
+            return new Product(codigo, nombre, precio, stock, descripcion, imagen, estado, categoryId, id);
         }
     }
 }

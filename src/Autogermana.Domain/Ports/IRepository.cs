@@ -21,14 +21,6 @@ namespace Autogermana.Domain.Ports
         public Task<T> Save<T>(T obj, CancellationToken cancellationToken) where T : Entity;
 
         /// <summary>
-        /// verifica si existe el obj
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="expression"></param>
-        /// <returns></returns>
-        public bool Exists<T>(Expression<Func<T, bool>> expression) where T : Entity;
-
-        /// <summary>
         /// retorna un objeto, el primero en cumplir el predicado
         /// debe pararse datos unicos como el id, ya que, solo devolvera el primer objeto
         /// </summary>
@@ -47,5 +39,22 @@ namespace Autogermana.Domain.Ports
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
         public Task<T> Update<T>(T obj, CancellationToken cancellationToken) where T : Entity;
+
+        /// <summary>
+        /// retorna todos los objetos
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public Task<List<T>> GetAll<T>(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// retorna una lista segun la condicion
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="expression"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public Task<List<T>> GetAll<T>(Expression<Func<T, bool>> expression,
+            CancellationToken cancellationToken) where T : Entity;
     }
 }

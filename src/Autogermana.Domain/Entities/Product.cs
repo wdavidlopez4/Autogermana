@@ -48,7 +48,7 @@ namespace Autogermana.Domain.Entities
         /// <param name="categoryId"></param>
         /// <param name="id"></param>
         internal Product(string codigo, string nombre, float precio, int stock, string descripcion, Byte imagen, 
-            StateProductEnum estado, Category category, string categoryId, Guid? id = null):base(id)
+            StateProductEnum estado, string categoryId, Guid? id = null):base(id)
         {
             this.Codigo = codigo;
             this.Nombre = nombre;
@@ -57,7 +57,6 @@ namespace Autogermana.Domain.Entities
             this.Descripcion = descripcion;
             this.Imagen = imagen;
             this.Estado = estado;
-            this.Category = category;
             this.CategoryId = categoryId;
 
             //validaciones

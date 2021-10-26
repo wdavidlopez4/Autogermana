@@ -12,6 +12,6 @@ namespace Autogermana.Domain.Factories
         public Entity BuilderCategory(string nombre, string descripcion, StateCategoryEnum estado, Guid? id = null);
 
         public Entity BuilderProduct(string codigo, string nombre, float precio, int stock, string descripcion, Byte imagen,
-            StateProductEnum estado, Category category, string categoryId, Guid? id = null);
+            StateProductEnum estado, string categoryId, Guid? id = null);
     }
 }
