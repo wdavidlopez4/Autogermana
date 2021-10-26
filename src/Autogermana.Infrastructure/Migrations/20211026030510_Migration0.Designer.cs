@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Autogermana.Infrastructure.Migrations
 {
     [DbContext(typeof(AutogermanaContext))]
-    [Migration("20211026030002_Migration0")]
+    [Migration("20211026030510_Migration0")]
     partial class Migration0
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -36,7 +36,7 @@ namespace Autogermana.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ManualMonitorings");
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("Autogermana.Domain.Entities.Product", b =>
@@ -72,7 +72,7 @@ namespace Autogermana.Infrastructure.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("ImageMonitorings");
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("Autogermana.Domain.Entities.Product", b =>

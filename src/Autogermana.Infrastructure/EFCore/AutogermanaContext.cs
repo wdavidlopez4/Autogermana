@@ -10,9 +10,9 @@ namespace Autogermana.Infrastructure.EFCore
 {
     public class AutogermanaContext : DbContext
     {
-        public DbSet<Product> ImageMonitorings { get; set; }
+        public DbSet<Product> Products { get; set; }
 
-        public DbSet<Category> ManualMonitorings { get; set; }
+        public DbSet<Category> Categories { get; set; }
 
 
         public AutogermanaContext(DbContextOptions<AutogermanaContext> options) : base(options)
