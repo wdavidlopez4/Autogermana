@@ -9,6 +9,6 @@ namespace Autogermana.Application.ProductServices.QueryProductsByCategory
 {
     public class ProductsByCategoryQuery : IRequest<List<ProductsByCategoryDTO>>
     {
-        public string CategoryId { get; private set; }
+        public string CategoryId { get; set; }
     }
 }

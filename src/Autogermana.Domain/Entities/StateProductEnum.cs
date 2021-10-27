@@ -8,5 +8,8 @@ namespace Autogermana.Domain.Entities
 {
     public enum StateProductEnum
     {
+        danado = 0,
+        nuevo = 1,
+        defecto = 3
     }
 }

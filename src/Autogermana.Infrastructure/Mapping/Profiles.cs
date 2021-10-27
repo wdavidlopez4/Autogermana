@@ -17,7 +17,7 @@ namespace Autogermana.Infrastructure.Mapping
     {
         public Profiles()
         {
-            this.CreateMap<List<Product>, List<ProductsByCategoryDTO>>();
+            this.CreateMap<Product, ProductsByCategoryDTO>();
             this.CreateMap<Product, ProductUpdateDataDTO>();
             this.CreateMap <Product, ProductCreateDTO>();
             this.CreateMap <Category, AllCategoriesDTO>();

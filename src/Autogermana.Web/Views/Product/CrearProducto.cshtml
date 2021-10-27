@@ -1,0 +1,71 @@
+﻿@using Autogermana.Application.ProductServices.CommandProductCreate
+@model ProductCreateCommand
+
+@{
+    ViewData["Title"] = "productos";
+}
+
+<div class="form-row">
+    <div class="col-md-12">
+        <form method="post" asp-controller="Product" asp-action="CrearProducto" class="form-group">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <!--nombre-->
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label"></label>
+                <input asp-for="Nombre" type="text" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+
+            <!--descripcion-->
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Descripcion</label>
+                <textarea asp-for="Descripcion" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+
+            <!--estado-->
+            <select class="form-group" aria-label="ninguno" asp-for="Estado">
+                <option selected>seleccione un estado</option>
+                <option value=0>dañado</option>
+                <option value=1>nuevo</option>
+                <option value=2>en defecto</option>
+            </select>
+
+            <!--codigo-->
+            <div class="form-group">
+                <label asp-for="Codigo" class="control-label"></label>
+                <input asp-for="Codigo" type="text" class="form-control" />
+                <span asp-validation-for="Codigo" class="text-danger"></span>
+            </div>
+
+            <!--Stock-->
+            <div class="form-group">
+                <label asp-for="Stock" class="control-label"></label>
+                <input asp-for="Stock" type="text" class="form-control" />
+                <span asp-validation-for="Stock" class="text-danger"></span>
+            </div>
+
+            <!--Precio-->
+            <div class="form-group">
+                <label asp-for="Precio" class="control-label"></label>
+                <input asp-for="Precio" type="number" class="form-control" />
+                <span asp-validation-for="Precio" class="text-danger"></span>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <!--enviar formulario-->
+                    <div class="col-sm">
+                        <input type="submit" value="Crear" class="btn btn-outline-dark" />
+                    </div>
+                    <!--regresar a la lista de mensajes-->
+                    <div class="col-sm">
+                        <a class="btn btn-outline-dark" asp-area="" asp-controller="Category" asp-action="Index">Productos</a>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>

@@ -18,7 +18,7 @@
                 <h5 class="mt-0">@categoria.Nombre</h5>
                 <h6 class="card-subtitle mb-2 text-muted">@categoria.Estado</h6>
                 <p>@categoria.Descripcion</p>
-                <a class="btn btn-outline-dark" asp-area="" asp-controller="" asp-action="">Ver Productos</a>
+                <a class="btn btn-outline-dark" asp-area="" asp-controller="Product" asp-action="Index" asp-route-categoryId="@categoria.Id">Ver Productos</a>
             </div>
         </div>
     }
