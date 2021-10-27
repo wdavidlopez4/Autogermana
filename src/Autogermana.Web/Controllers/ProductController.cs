@@ -1,4 +1,5 @@
 ﻿using Autogermana.Application.ProductServices.CommandProductCreate;
+using Autogermana.Application.ProductServices.CommandProductUpdateData;
 using Autogermana.Application.ProductServices.QueryProductsByCategory;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -53,6 +54,32 @@ namespace Autogermana.Web.Controllers
                 return NotFound();
             }
             
+        }
+
+        public IActionResult ModificarProducto(string idCategoria, string idProducto)
+        {
+            TempData["IdCategoria"] = idCategoria;
+            TempData["idProducto"] = idProducto;
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ModificarProducto([Bind("Nombre,Descripcion,Estado,Codigo,Stock,Precio")]
+            ProductUpdateDataCommand command)
+        {
+            if (ModelState.IsValid)
+            {
+                command.CategoryId = TempData["IdCategoria"].ToString();
+                command.Id = TempData["idProducto"].ToString();
+                var dto = await this.meditor.Send(command);
+
+                return RedirectToAction("Index", "Category");
+            }
+            else
+            {
+                return NotFound();
+            }
+
         }
     }
 }

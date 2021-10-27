@@ -4,7 +4,6 @@
 @{
     ViewData["Title"] = "productos";
     var idCategoria = ViewBag.categoriaId;
-    int cont = 0;
 }
 
 
@@ -15,7 +14,7 @@
     <table class="table table-dark">
         <thead>
             <tr>
-                <th scope="col">cantidad</th>
+                <th scope="col">Modificar</th>
                 <th scope="col">Codigo</th>
                 <th scope="col">Descripcion</th>
                 <th scope="col">Estado</th>
@@ -29,7 +28,15 @@
             @foreach (var product in Model)
             {  
                 <tr>
-                    <th scope="row">@cont++</th>
+                    <th scope="row">
+                        <a class="btn btn-outline-info" 
+                           asp-area="" 
+                           asp-controller="Product" 
+                           asp-action="ModificarProducto" 
+                           asp-route-idCategoria="@idCategoria"
+                           asp-route-idProducto="@product.Id">Ir
+                        </a>
+                    </th>
                     <td>@product.Codigo</td>
                     <td>@product.Descripcion</td>
                     <td>@product.Estado</td>

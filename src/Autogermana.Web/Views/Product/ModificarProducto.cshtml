@@ -1,13 +1,12 @@
-﻿@using Autogermana.Application.ProductServices.CommandProductCreate
-@model ProductCreateCommand
-
+﻿@using Autogermana.Application.ProductServices.CommandProductUpdateData
+@model ProductUpdateDataCommand
 @{
-    ViewData["Title"] = "CrearProductos";
+    ViewData["Title"] = "modificarProducto";
 }
 
 <div class="form-row">
     <div class="col-md-12">
-        <form method="post" asp-controller="Product" asp-action="CrearProducto" class="form-group">
+        <form method="post" asp-controller="Product" asp-action="ModificarProducto" class="form-group">
 
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 

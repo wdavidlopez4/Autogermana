@@ -42,7 +42,8 @@ namespace Autogermana.Application.ProductServices.CommandProductUpdateData
                 descripcion: request.Descripcion,
                 imagen: request.Imagen,
                 estado: request.Estado,
-                categoryId: request.CategoryId);
+                categoryId: request.CategoryId,
+                id: Guid.Parse(request.Id));
 
             //actualizar
             product = await this.repository.Update<Product>(product, cancellationToken);

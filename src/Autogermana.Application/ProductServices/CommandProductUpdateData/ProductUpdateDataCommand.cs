@@ -10,6 +10,8 @@ namespace Autogermana.Application.ProductServices.CommandProductUpdateData
 {
     public class ProductUpdateDataCommand : IRequest<ProductUpdateDataDTO>
     {
+        public string Id { get; set; }
+
         public string Codigo { get; set; }
 
         public string Nombre { get; set; }
@@ -24,7 +26,7 @@ namespace Autogermana.Application.ProductServices.CommandProductUpdateData
 
         public StateProductEnum Estado { get; set; }
 
-        public string CategoryId { get; private set; }
+        public string CategoryId { get; set; }
 
     }
 }
